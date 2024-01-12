@@ -2,7 +2,6 @@ package com.EcommerceMarketplace.Service;
 
 import com.EcommerceMarketplace.Entity.OrderEntity;
 import com.EcommerceMarketplace.Entity.OrderItems;
-import com.EcommerceMarketplace.Entity.OrderItemsEntity;
 import com.EcommerceMarketplace.Entity.ProductEntity;
 import com.EcommerceMarketplace.Repository.OrderRepository;
 import com.EcommerceMarketplace.Repository.ProductRepository;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class OrderService {
