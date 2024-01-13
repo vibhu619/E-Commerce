@@ -32,4 +32,7 @@ public class ProductEntity {
     @Column(name = "seller_id")
     public Integer sellerId;
 
+    @Column(name="average_rating")
+    public Double rating;
+
 }

@@ -31,4 +31,9 @@ public class OrderController {
         return orderService.placeOrder(orderItems);
     }
 
+    @DeleteMapping("/cancelOrder")
+    public ResponseEntity<String> cancelOrder(@RequestParam Integer id){
+        return orderService.cancel(id);
+    }
+
 }

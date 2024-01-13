@@ -60,13 +60,19 @@ public class OrderService {
     private Integer findAmountForOneProduct(OrderItems orderItem){
 
        ProductEntity product=productRepository.findById(orderItem.getProductId()).orElseThrow();
-        reduceQuantityOfProduct(product,orderItem);
+       reduceQuantityOfProduct(product,orderItem);
        return product.getPrice()*orderItem.getQuantity();
     }
 
     private void reduceQuantityOfProduct(ProductEntity product, OrderItems orderItem) {
         product.setQuantity(product.getQuantity()-orderItem.getQuantity());
         productRepository.save(product);
+
+    }
+
+    public ResponseEntity<String> cancel(Integer id) {
+        orderRepository.deleteById(id);
+        return new ResponseEntity<>("Order Cancelled",HttpStatus.OK);
 
     }
 }
